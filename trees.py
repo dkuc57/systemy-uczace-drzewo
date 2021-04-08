@@ -2,6 +2,11 @@ import math
 
 class DecisionTree:
 
+    @staticmethod 
+    def entropy(probs: list) -> float:
+        """ Compute an entropy for a vector of probabilities """
+        return -sum([p*math.log(p,2) for p in probs if p != 0])
+
     def __init__(self, data_path, separator):
         self.data_path = data_path
         self.separator = separator
